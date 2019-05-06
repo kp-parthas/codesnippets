@@ -1,0 +1,19 @@
+define count_in_list
+        set $mycount = 0
+        set $myobj = mylist.list_head
+        while ($myobj)
+                if $myobj->type == TYPE_TEST
+                        set $mycount = $mycount+1
+                end
+                set $myobj = $myobj->list_next
+	end
+	print "count=%d", $mycount
+end
+
+define walk_q
+        set $myq = q_head
+        while ($myq)
+		print *(myq_t *)($myq->q_data)
+                set $myq = $myq->q_next
+	end
+end
